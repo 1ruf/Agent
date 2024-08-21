@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class EnemyDetecter : MonoBehaviour
 {
-    [SerializeField] private GameObject enemy;
+    [SerializeField] private GameObject GameManager;
     [SerializeField] private EnemyMovement enemyScript;
     [SerializeField] private float FOV;
     [SerializeField] private LayerMask targetMask;
+    private GameObject enemy;
+    private Transform enemyFolder;
+    private Transform targetEnemy;
     private Vector3 enemyDir;
     private Color alpha, Nalpha;
     private float dis, maxAngle = 50f;
@@ -28,7 +31,7 @@ public class EnemyDetecter : MonoBehaviour
         enemyDir = enemy.transform.position - transform.position; 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, enemyDir, dis, LayerMask.GetMask("wall"));//실제로 작동되는것
         Debug.DrawRay(transform.position, enemyDir, Color.red);//보이는것만
-        if (hit.collider || (dis >= FOV))
+        if (hit.collider || (dis >= FOV) || !isVisible)
         {
             enemy.GetComponent<SpriteRenderer>().color = alpha;
             enemyScript.IsAlpha = true;
@@ -59,15 +62,7 @@ public class EnemyDetecter : MonoBehaviour
     }
     private void Detect()
     {
-        Collider2D[] collision = Physics2D.OverlapCircleAll(transform.position, FOV, targetMask);
-        if (collision[0])
-        {
-            print("Something detected");
-            if (collision[0].CompareTag("Enemy"))
-            {
-                print("Something is enemy");
-                enemy = collision[0].gameObject;
-            }
-        }
+        enemyFolder = enemyFolder.Find("EnemyFolder");
+        targetEnemy = enemyFolder.Find("EnemyFolder").Find("Enemy");
     }
 }
