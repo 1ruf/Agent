@@ -9,8 +9,7 @@ public class EnemyDetecter : MonoBehaviour
     [SerializeField] private float FOV;
     [SerializeField] private LayerMask targetMask;
     private GameObject enemy;
-    private Transform enemyFolder;
-    private Transform targetEnemy;
+    private GameObject targetEnemy;
     private Vector3 enemyDir;
     private Color alpha, Nalpha;
     private float dis, maxAngle = 50f;
@@ -62,7 +61,7 @@ public class EnemyDetecter : MonoBehaviour
     }
     private void Detect()
     {
-        enemyFolder = enemyFolder.Find("EnemyFolder");
-        targetEnemy = enemyFolder.Find("EnemyFolder").Find("Enemy");
+        targetEnemy = GameObject.Find("Enemy");
+        enemy = targetEnemy;
     }
 }
