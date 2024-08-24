@@ -30,7 +30,11 @@ public class EnemyDetecter : MonoBehaviour
         enemyDir = enemy.transform.position - transform.position; 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, enemyDir, dis, LayerMask.GetMask("wall"));//실제로 작동되는것
         Debug.DrawRay(transform.position, enemyDir, Color.red);//보이는것만
-        if (hit.collider || (dis >= FOV) || !isVisible)
+        DetectCollider(hit);
+    }
+    private void DetectCollider(RaycastHit2D hit2D)
+    {
+        if (hit2D.collider || (dis >= FOV) || !isVisible)
         {
             enemy.GetComponent<SpriteRenderer>().color = alpha;
             enemyScript.IsAlpha = true;
