@@ -5,6 +5,7 @@ using UnityEngine;
 public class Gun : MonoBehaviour
 {
     [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private GameObject flameLight;
     [SerializeField] private GameObject muzzel;
     [SerializeField] private GunSO gunSO;
 
@@ -60,10 +61,24 @@ public class Gun : MonoBehaviour
     }
     public void Fire()
     {
+        StartCoroutine(FlameLight());
         spawnBullet();
     }
     private void spawnBullet()
     {
         GameObject bullet = Instantiate(bulletPrefab, muzzel.transform.position, transform.rotation, null);
+    }
+    private IEnumerator FlameLight()
+    {
+        if (Random.Range(1, 4) == 3)
+        {
+
+        }
+        else
+        {
+            flameLight.SetActive(true);
+            yield return new WaitForSeconds(0.05f);
+            flameLight.SetActive(false);
+        }
     }
 }
