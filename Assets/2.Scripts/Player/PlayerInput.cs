@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,9 +6,12 @@ using UnityEngine.Events;
 
 public class PlayerInput : MonoBehaviour
 {
+    [SerializeField] private Gun scrWeapon;
+
+    private Camera mainCam;
+
     public UnityEvent<Vector2> onPointerChange;
     public Vector2 moveDir { get; private set; }
-    private Camera mainCam;
     private void Start()
     {
         mainCam = Camera.main;
@@ -16,6 +20,15 @@ public class PlayerInput : MonoBehaviour
     {
         GetMouseInput();
         MoveInput();
+        TestInput();
+    }
+
+    private void TestInput()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            scrWeapon.Fire();
+        }
     }
 
     public void MoveInput()
