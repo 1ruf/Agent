@@ -12,6 +12,6 @@ public class Bullet : MonoBehaviour
     }
     private void OnEnable()
     {
-        _rigid.AddForce(Vector2.up * bulletSpd);
+        _rigid.AddForce(transform.up * bulletSpd);
     }
 }

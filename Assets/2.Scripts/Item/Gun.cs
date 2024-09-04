@@ -17,8 +17,8 @@ public class Gun : MonoBehaviour
 
     private float spreadAngle;          //Åº ÆÛÁü °¢µµ
 
-    //private GunSO.GunType _gunType = new GunSO.GunType();
-    /*private void Start()
+    private GunSO.GunType _gunType = new GunSO.GunType();
+    private void Start()
     {
         _gunType = GunSO.GunType.Rifle;
         SettingGun();
@@ -52,7 +52,7 @@ public class Gun : MonoBehaviour
                 spreadAngle = gunSO.p_spreadAngle;
                 break;
         }
-    }*/
+    }
 
     private void LoadGun()
     {
