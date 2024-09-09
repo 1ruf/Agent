@@ -62,8 +62,8 @@ public class Gun : MonoBehaviour
             case GunSO.GunType.Rifle:
                 gunName = "M4A1";
                 print(ammo = gunSO.r_nowAmmo);
-                ammoCapacity = gunSO.r_ammoCapacity;
-                maxAmmo = gunSO.r_maxAmmo;
+                ammoCapacity = gunSO.r_maxAmmo;
+                maxAmmo = gunSO.r_ammoCapacity;
                 reloadTime = gunSO.r_reloadTime;
                 fireRate = gunSO.r_fireRate;
                 auto = gunSO.r_auto;
@@ -72,8 +72,8 @@ public class Gun : MonoBehaviour
             case GunSO.GunType.Shotgun:
                 gunName = "M1014";
                 print(ammo = gunSO.s_nowAmmo);
-                ammoCapacity = gunSO.s_ammoCapacity;
-                maxAmmo = gunSO.s_maxAmmo;
+                ammoCapacity = gunSO.s_maxAmmo;
+                maxAmmo = gunSO.s_ammoCapacity;
                 reloadTime = gunSO.s_reloadTime;
                 fireRate = gunSO.s_fireRate;
                 auto = gunSO.s_auto;
@@ -82,8 +82,8 @@ public class Gun : MonoBehaviour
             case GunSO.GunType.Pistol:
                 gunName = "G17";
                 ammo = gunSO.p_nowAmmo;
-                ammoCapacity = gunSO.p_ammoCapacity;
-                maxAmmo = gunSO.p_maxAmmo;
+                ammoCapacity = gunSO.p_maxAmmo;
+                maxAmmo = gunSO.p_ammoCapacity;
                 reloadTime = gunSO.p_reloadTime;
                 fireRate = gunSO.p_fireRate;
                 auto = gunSO.p_auto;
