@@ -13,19 +13,23 @@ MonoBehaviour:
   m_Name: GunSO
   m_EditorClassIdentifier: 
   r_ammoCapacity: 30
+  r_nowAmmo: 30
   r_maxAmmo: 150
   r_reloadTime: 2.5
   r_fireRate: 0.05
+  r_spreadAngle: 1
+  r_auto: 1
   s_ammoCapacity: 5
+  s_nowAmmo: 5
   s_maxAmmo: 25
   s_reloadTime: 4
   s_fireRate: 0.5
   s_spreadAngle: 15
+  s_auto: 0
   p_ammoCapacity: 17
+  p_nowAmmo: 17
   p_maxAmmo: 85
   p_reloadTime: 2
   p_fireRate: 0.15
-  gun: 0
-  Ammo: 0
-  Auto: 0
-  spreadAngle: 0
+  p_spreadAngle: 2
+  p_auto: 0
