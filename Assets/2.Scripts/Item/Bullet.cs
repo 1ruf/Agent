@@ -14,4 +14,11 @@ public class Bullet : MonoBehaviour
     {
         _rigid.AddForce(transform.up * bulletSpd);
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player") == false)
+        {
+            Destroy(gameObject);
+        }
+    }
 }
