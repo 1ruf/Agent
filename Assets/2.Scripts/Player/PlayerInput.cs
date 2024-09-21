@@ -27,7 +27,7 @@ public class PlayerInput : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            scrWeapon.Fire();
+            scrWeapon.CheckAmmo();
         }
     }
 

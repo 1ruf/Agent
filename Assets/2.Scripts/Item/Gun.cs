@@ -96,21 +96,29 @@ public class Gun : MonoBehaviour
     {
         //ÃÑ sprite ¼³Á¤ÇÏ±â
     }
-    public void Fire()
+    public void CheckAmmo()
     {
         if (!noAmmo)
         {
-            StartCoroutine(FlameLight());
-            StartCoroutine(ShakeCam());
-            spawnBullet();
-            gunUI.SetUIText(gunName, ammo, ammoCapacity);
-            ammoMinus(_gunType);
-            print(ammo);
+            SetAmmo();
         }
         else
         {
             print("you need to reload your gun.");
         }
+    }
+    private void SetAmmo()
+    {
+        Fire();
+    }
+    private void Fire()
+    {
+        StartCoroutine(FlameLight());
+        StartCoroutine(ShakeCam());
+        spawnBullet();
+        gunUI.SetUIText(gunName, ammo, ammoCapacity);
+        ammoMinus(_gunType);
+        print(ammo);
     }
     private void ammoMinus(GunSO.GunType gunType)
     {
